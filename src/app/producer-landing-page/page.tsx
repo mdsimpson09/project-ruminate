@@ -25,7 +25,7 @@ export default function ProducerLandingPage() {
           <div className="main-content">
             <div className="hero-section">
               <div className="hero-container">
-                <div className="hero-content">
+                <div className="hero-content flex-col md:flex-row">
                   <div className="text-container">
                     <h1 className="hero-heading">
                       <span className="hero-for">FOR</span>
