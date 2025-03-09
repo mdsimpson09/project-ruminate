@@ -3,11 +3,59 @@ import Lightbulb from "../../assets/lightbulb.png";
 import Medal from "../../assets/medal.png";
 import Checklist from "../../assets/checklist.png";
 import Image from "next/image";
+import FAQSPage from "../FAQS/page";
+import ForkBanner from "@/components/fork-banner";
+import { Carousel } from "@/components/ui/carousel";
+import DynamicRectangleButton from "@/components/buttons/update-rectangle-button";
+
+import producerHero1 from "../../assets/images/producer-image-hero-1.svg";
+import producerHero2 from "../../assets/images/producer-image-hero-2.svg";
+import producerHero3 from "../../assets/images/producer-image-hero-3.svg";
+import Navbar from "@/components/navbar";
 
 export default function ProducerLandingPage() {
+  const images = [producerHero1, producerHero2, producerHero3];
+
   return (
     <div className="bg-white">
       <main className="flex flex-col">
+        <section className="homepage">
+          <Navbar />
+
+          <div className="main-content">
+            <div className="hero-section">
+              <div className="hero-container">
+                <div className="hero-content">
+                  <div className="text-container">
+                    <h1 className="hero-heading">
+                      <span className="hero-for">FOR</span>
+                      <span className="hero-producers">PRODUCERS</span>
+                    </h1>
+                    <h2 className="hero-by">BY PRODUCERS</h2>
+                    <p className="hero-subtext">
+                      Refine your product for a better food system
+                    </p>
+                    <DynamicRectangleButton
+                      className="hero-button"
+                      label="Sign Up"
+                      size="lg"
+                      bgColor="#FFFFFF"
+                      textColor="#11639A"
+                      iconColor="#11639A"
+                      noOutline
+                    />
+                  </div>
+                  <div className="carousel-container">
+                    <Carousel images={images} />
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="banner-wrapper">
+              <ForkBanner />
+            </div>
+          </div>
+        </section>
         <section className="flex justify-center bg-semantic-accent-100">
           <div className="px-12 sm:px-24 py-16 flex flex-col gap-y-24">
             <div className="flex flex-col gap-y-5">
@@ -61,6 +109,11 @@ export default function ProducerLandingPage() {
                 }
               />
             </div>
+          </div>
+        </section>
+        <section>
+          <div>
+            <FAQSPage />
           </div>
         </section>
       </main>
