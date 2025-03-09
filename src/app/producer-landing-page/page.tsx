@@ -3,15 +3,27 @@ import Lightbulb from "../../assets/lightbulb.png";
 import Medal from "../../assets/medal.png";
 import Checklist from "../../assets/checklist.png";
 import Image from "next/image";
+import PricingPlanBox from "@/components/PricingPlanBox";
+import {
+  ArrowRightIcon,
+  ForkAndKnifeIcon,
+  ForkIcon,
+  SilverwareIcon,
+} from "@/components/icons";
+import DataBox from "@/components/DataBox";
+
+import personWithMegaphone from "../../assets/person-with-megaphone.png";
+import chocolateBackground from "../../assets/chocolate.png";
 
 export default function ProducerLandingPage() {
   return (
     <div className="bg-white">
       <main className="flex flex-col">
-        <section className="flex justify-center bg-semantic-accent-100">
-          <div className="px-12 sm:px-24 py-16 flex flex-col gap-y-24">
+        {/* EXPERIENCED PROFESSIONALS SECTION */}
+        <section className="flex justify-center bg-semantic-accent-100 z-10">
+          <div className="max-w-[1280px] container px-12 sm:px-24 py-16 flex flex-col gap-y-24">
             <div className="flex flex-col gap-y-5">
-              <h2 className="big-header-normal">
+              <h2 className="big-header-normal text-semantic-accent-900">
                 EXPERIENCED PROFESSIONALS <br></br>EXCEPTIONAL{" "}
                 <span className="big-header-wide">INSIGHTS</span>
               </h2>
@@ -61,6 +73,167 @@ export default function ProducerLandingPage() {
                 }
               />
             </div>
+          </div>
+        </section>
+
+        {/* 
+          
+          BACKED BY DATA SECTION 
+          
+        */}
+
+        <section className="relative flex justify-center bg-semantic-secondary-700">
+          <div className="relative max-w-[1280px] container flex flex-col items-start gap-y-5 px-12 sm:px-24 py-16 ">
+            <h2 className="big-header-normal text-semantic-secondary-900 z-10">
+              BACKED BY DATA <br></br>FUELED BY{" "}
+              <span className="big-header-wide">PASSION</span>
+            </h2>
+
+            <p className="max-w-screen-sm text-white z-10">
+              Standing out in this competitive space requires understanding what
+              customers value and how they define quality. With Feedback, you’ll
+              gain these insights—and a clearer path to success.
+            </p>
+            <DataBox />
+            <Image
+              className="hidden absolute -bottom-28 -right-28 sm:block z-0"
+              src={personWithMegaphone}
+              alt="a chef with tattoos holding a megaphone to their mouth with their mouth open"
+              height={750}
+              width={1000}
+            />
+          </div>
+          <Image
+            className="hidden sm:absolute top-0 -right-0 xl:block z-0"
+            src={chocolateBackground}
+            alt="a chocolate bar broken into pieces"
+            height={500}
+            width={575}
+          />
+          <Image
+            className="block absolute -top-24 md:top-0 -right-16 xl:hidden z-0"
+            src={chocolateBackground}
+            alt="a chocolate bar broken into pieces"
+            height={250}
+            width={350}
+          />
+        </section>
+
+        {/*
+         
+         PRICING PLANS SECTION
+         
+        */}
+        <section className="flex justify-center bg-semantic-secondary-400 z-10">
+          <div className="max-w-[1280px] container px-12 sm:px-24 py-16 flex flex-col gap-y-14">
+            <h2 className="big-header-normal w-max text-semantic-accent-900">
+              PRICING <span className="big-header-wide">PLANS</span>
+            </h2>
+            <div className="flex flex-col flex-wrap items-center lg:items-start gap-y-24 lg:flex-row md:gap-x-8">
+              <PricingPlanBox
+                title="Snack"
+                evaluationCost={99}
+                accentColor="light-blue"
+                headerIcon={<ForkIcon />}
+              >
+                <p className="text-[1rem] mb-2">Great for general feedback.</p>
+                <p className="text-[1rem] font-bold mb-1">Includes:</p>
+                <ul className="text-[1rem] list-disc pl-3 leading-[1.25rem] flex flex-col gap-y-3">
+                  <li>
+                    <span className="font-bold">3 Evaluators </span>review your
+                    product.
+                  </li>
+                  <li>
+                    <span className="font-bold">
+                      Brand and packaging feedback {""}
+                    </span>
+                    to refine your design.
+                  </li>
+                  <li>
+                    <span className="font-bold">
+                      Product and pricing analysis{" "}
+                    </span>
+                    for sales insights.
+                  </li>
+                  <li>
+                    <span className="font-bold">
+                      Option to exclude 1 U.S. region
+                    </span>{" "}
+                    from evaluation.
+                  </li>
+                  <li>
+                    Access to Feedback’s{" "}
+                    <span className="font-bold">tools library</span> for
+                    improvement resources.
+                  </li>
+                </ul>
+              </PricingPlanBox>
+              <PricingPlanBox
+                title="Meal"
+                evaluationCost={349}
+                accentColor="dark-purple"
+                mostPopularOption
+                headerIcon={<ForkAndKnifeIcon />}
+              >
+                <p className="text-[1rem] mb-2 leading-[1.25rem]">
+                  Ideal for more in-depth feedback and flexibility.
+                </p>
+                <p className="text-[1rem] font-bold mb-1">
+                  Everything in Snack, plus:
+                </p>
+                <ul className="text-[1rem] list-disc pl-3 leading-[1.25rem] flex flex-col gap-y-3">
+                  <li>
+                    <span className="font-bold">Quick summaries </span> from the
+                    Feedback team for easy understanding.
+                  </li>
+                  <li>
+                    Add up to{" "}
+                    <span className="font-bold">2 extra evaluators</span> ($58
+                    each).
+                  </li>
+                  <li>
+                    Evaluate up to <span className="font-bold">6 products</span>{" "}
+                    in one round.
+                  </li>
+                </ul>
+              </PricingPlanBox>
+              <PricingPlanBox
+                title="Feast"
+                evaluationCost={569}
+                accentColor="dark-blue"
+                headerIcon={<SilverwareIcon />}
+              >
+                <p className="text-[1rem] mb-2 leading-[1.25rem]">
+                  Perfect for region-specific insights and tailored evaluations.
+                </p>
+                <p className="text-[1rem] font-bold mb-1">
+                  Everything in Meal, plus:
+                </p>
+                <ul className="text-[1rem] list-disc pl-3 leading-[1.25rem] flex flex-col gap-y-3">
+                  <li>
+                    <span className="font-bold">
+                      Target a specific U.S. region
+                    </span>{" "}
+                    for evaluations.
+                  </li>
+                  <li>
+                    <span className="font-bold">
+                      Unlimited 1-hour debrief calls
+                    </span>{" "}
+                    with the Feedback team to dig into your results.
+                  </li>
+                  <li>
+                    <span className="font-bold">Add custom questions</span> to
+                    the evaluation form to get answers unique to your goals.
+                  </li>
+                </ul>
+              </PricingPlanBox>
+            </div>
+
+            <button className="w-full self-center btn btn-primary sm:w-[21rem] bg-semantic-accent-900 text-semantic-accent-100 text-xl">
+              Get Started
+              <ArrowRightIcon />
+            </button>
           </div>
         </section>
       </main>

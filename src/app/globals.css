@@ -38,6 +38,10 @@ body {
   line-height: 1.75rem; /* 140% */
 }
 
+p {
+  font-family: var(--font-roboto-flex);
+}
+
 h3 {
   color: var(--d-color-base-1000, #000);
   font-size: 2.25rem;
@@ -47,7 +51,6 @@ h3 {
 }
 
 .big-header-normal {
-  color: var(--d-color-semantic-accent-900, #563058);
   font-size: 3.75rem;
   font-style: normal;
   font-weight: 800;
@@ -57,7 +60,6 @@ h3 {
 }
 
 .big-header-wide {
-  color: var(--d-color-semantic-accent-900, #563058);
   font-stretch: 125%;
   font-size: 3.75rem;
   font-weight: 1000;
@@ -69,4 +71,8 @@ h3 {
 .roboto-flex-wide {
   font-weight: 900;
   font-stretch: 125%;
+}
+
+.font-roboto-flex {
+  font-family: var(--font-roboto-flex);
 }
