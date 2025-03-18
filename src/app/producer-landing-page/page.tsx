@@ -58,7 +58,7 @@ export default function ProducerLandingPage() {
   return (
     <div className="bg-white">
       <main className="flex flex-col">
-        <section className="lg:max-h-[1080px] lg:h-screen flex hero-section bg-semantic-secondary-900">
+        <section className="lg:max-h-[1080px] h-screen flex hero-section bg-semantic-secondary-900">
           <Navbar />
 
           <div className="py-24 md:py-16 relative self-center max-w-[1280px] h-full container px-12 sm:px-24 flex flex-col gap-y-8 lg:gap-y-24">
@@ -90,7 +90,7 @@ export default function ProducerLandingPage() {
                 </div>
               </div>
             </div>
-            <div className="self-center sm:self-end lg:absolute right-0 -z-0">
+            <div className="hidden md:block absolute right-0 -z-0">
               <Carousel images={images} />
             </div>
           </div>

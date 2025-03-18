@@ -1,5 +1,3 @@
-
-
 // import Image from "next/image";
 
 // const ForkBanner = () => {
@@ -52,10 +50,10 @@ import Image from "next/image";
 
 const ForkBanner = () => {
   return (
-    <div className="fork-banner">
+    <div className="fork-banner overflow-clip">
       <div className="fork-banner-content">
         {Array.from({ length: 4 }).map((_, i) => (
-          <div key={i} className="fork-banner-set">
+          <div key={i} className="flex">
             {/* Fork - Ethical */}
             <div className="fork-banner-item">
               <Image

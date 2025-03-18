@@ -8,7 +8,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <header className="absolute w-full md:relative border-b-2 border-black bg-white h-20 px-12 py-4 flex justify-between items-center self-stretch z-20">
+      <header className="absolute w-full md:relative border-b-2 border-black bg-white h-16 px-12 py-4 flex justify-between items-center self-stretch z-20">
         <Link href="/" className="text-2xl font-bold">
           <FeedkcabLogo className="ml-2" />
         </Link>
@@ -75,7 +75,7 @@ const Navbar: React.FC = () => {
         <ul
           tabIndex={0}
           onClick={() => setMobileMenuShown(false)}
-          className="top-20 fixed bg-white z-1 w-screen p-2 shadow-sm z-20"
+          className="top-16 fixed bg-white z-1 w-screen p-2 shadow-sm z-20"
         >
           <li>
             <Link
