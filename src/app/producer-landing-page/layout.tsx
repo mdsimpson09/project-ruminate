@@ -4,6 +4,8 @@ export default async function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <div className="flex flex-col h-screen overflow-x-hidden">{children}</div>
+    <div className="flex flex-col h-screen overflow-x-hidden scroll-smooth">
+      {children}
+    </div>
   );
 }

@@ -22,7 +22,7 @@ import DynamicRectangleButton from "@/components/buttons/update-rectangle-button
 import producerHero1 from "../../assets/producer-image-hero.png";
 import producerHero2 from "../../assets/producer-image-hero2.png";
 import producerHero3 from "../../assets/producer-image-hero3.png";
-import Navbar from "@/components/navbar";
+import Navbar from "@/components/Navbar";
 import Divider from "@/components/Divider";
 
 const items = [
@@ -61,7 +61,7 @@ export default function ProducerLandingPage() {
         <section className="lg:max-h-[1080px] lg:h-screen flex hero-section bg-semantic-secondary-900">
           <Navbar />
 
-          <div className="relative self-center max-w-[1280px] h-full container px-12 sm:px-24 py-16 flex flex-col gap-y-8 lg:gap-y-24">
+          <div className="py-24 md:py-16 relative self-center max-w-[1280px] h-full container px-12 sm:px-24 flex flex-col gap-y-8 lg:gap-y-24">
             <div className="hero-box z-10">
               <div className="hero-container">
                 <div className="flex-col lg:flex-row">
@@ -100,39 +100,41 @@ export default function ProducerLandingPage() {
         </section>
 
         <section className="why-choose-us flex justify-center">
+          <div className="max-w-[1280px] py-24 md:py-16 content-container container px-12 sm:px-24 pt-16 flex flex-col gap-y-24">
+            <h2 className="big-header-normal text-semantic-accent-900">
+              WHY CHOOSE
+              <br />
+              <span className="big-header-wide">FEEDBACK</span>
+            </h2>
+            <p className="description-text max-w-screen-sm">
+              Many producers rely on personal networks or annual trade shows for
+              feedback. Feedback offers a better way—providing reviews that are:
+            </p>
 
-        <div className="max-w-[1280px] content-container container px-12 sm:px-24 pt-16 flex flex-col gap-y-24">
-          <h2 className="big-header-normal text-semantic-accent-900">
-            WHY CHOOSE
-            <br />
-            <span className="big-header-wide">FEEDBACK</span>
-          </h2>
-          <p className="description-text max-w-screen-sm">
-            Many producers rely on personal networks or annual trade shows for
-            feedback. Feedback offers a better way—providing reviews that are:
-          </p>
+            {/* Divider Sections */}
+            <div className="flex flex-col gap-y-12">
+              {items.map((item, index) => (
+                <div
+                  key={index}
+                  className="flex flex-col gap-y-4 max-w-[615px]"
+                >
+                  {/* Top Divider */}
+                  <Divider index={index} />
 
-          {/* Divider Sections */}
-          <div className="flex flex-col gap-y-12">
-            {items.map((item, index) => (
-              <div key={index} className="flex flex-col gap-y-4 max-w-[615px]">
-                {/* Top Divider */}
-                <Divider index={index} />
-
-                {/* Section Content: Title on Left, Description on Right */}
-                <div className="section-content">
-                  <h3 className="divider-title">{item.title}</h3>
-                  <p className="divider-description">{item.description}</p>
+                  {/* Section Content: Title on Left, Description on Right */}
+                  <div className="section-content">
+                    <h3 className="divider-title">{item.title}</h3>
+                    <p className="divider-description">{item.description}</p>
+                  </div>
                 </div>
-              </div>
-            ))}
-            {/* Final Divider */}
-            <Divider index={items.length} />
+              ))}
+              {/* Final Divider */}
+              <Divider index={items.length} />
+            </div>
           </div>
-        </div>
 
-        {/* Right Side Image (1/3 of the screen) */}
-        {/* <Image
+          {/* Right Side Image (1/3 of the screen) */}
+          {/* <Image
             src="/assets/img/cuttingboard.png" // No need to import, just use the path
             alt="cutting board"
             className="cuttingboard-image"
@@ -140,16 +142,16 @@ export default function ProducerLandingPage() {
             height={840}
             /> */}
 
-        <div className="hidden max-w-xl lg:block">
-          <video autoPlay loop muted playsInline className="video-content">
-            <source
-              src="/assets/videos/rotating_cheese_knife.mp4"
-              type="video/mp4"
-            />
-            Your browser does not support the video tag.
-          </video>
-        </div>
-        {/* <Image
+          <div className="hidden max-w-xl lg:block">
+            <video autoPlay loop muted playsInline className="video-content">
+              <source
+                src="/assets/videos/rotating_cheese_knife.mp4"
+                type="video/mp4"
+              />
+              Your browser does not support the video tag.
+            </video>
+          </div>
+          {/* <Image
             src="/assets/img/cut-cheese.png"
             alt="cheese"
             className="cheese-image"
@@ -164,12 +166,11 @@ export default function ProducerLandingPage() {
             width={246}
             height={592}
           /> */}
-
-    </section>
+        </section>
         {/* EXPERIENCED PROFESSIONALS SECTION */}
 
         <section className="flex justify-center bg-semantic-accent-100 z-10">
-          <div className="max-w-[1280px] container px-12 sm:px-24 py-16 flex flex-col gap-y-24">
+          <div className="max-w-[1280px] container px-12 sm:px-24 py-24 md:py-16 flex flex-col gap-y-24">
             <div className="flex flex-col gap-y-5">
               <h2 className="big-header-normal text-semantic-accent-900">
                 EXPERIENCED PROFESSIONALS <br></br>EXCEPTIONAL{" "}
@@ -231,7 +232,7 @@ export default function ProducerLandingPage() {
         */}
 
         <section className="relative flex justify-center bg-semantic-secondary-700">
-          <div className="relative max-w-[1280px] container flex flex-col items-start gap-y-5 px-12 sm:px-24 py-16 ">
+          <div className="relative max-w-[1280px] py-24 md:py-16 container flex flex-col items-start gap-y-5 px-12 sm:px-24">
             <h2 className="big-header-normal text-semantic-secondary-900 z-10">
               BACKED BY DATA <br></br>FUELED BY{" "}
               <span className="big-header-wide">PASSION</span>
@@ -272,8 +273,11 @@ export default function ProducerLandingPage() {
          PRICING PLANS SECTION
          
         */}
-        <section className="flex justify-center bg-semantic-secondary-400 z-10">
-          <div className="max-w-[1280px] container px-12 sm:px-24 py-16 flex flex-col gap-y-14">
+        <section
+          id="pricing"
+          className="flex justify-center bg-semantic-secondary-400 z-10"
+        >
+          <div className="max-w-[1280px] container py-24 md:py-16 px-12 sm:px-24 flex flex-col gap-y-14">
             <h2 className="big-header-normal w-max text-semantic-accent-900">
               PRICING <span className="big-header-wide">PLANS</span>
             </h2>
@@ -384,13 +388,16 @@ export default function ProducerLandingPage() {
             </button>
           </div>
         </section>
-        <section className="flex justify-center" style={{
-        backgroundColor: "var(--d-color-semantic-secondary-800, #3D83AB)",
-        backgroundImage:
-          "linear-gradient(var(--d-color-semantic-secondary-700, #69A2BC) 1px, transparent 1px), linear-gradient(90deg, var(--d-color-semantic-secondary-700, #69A2BC) 1px, transparent 1px)",
-        backgroundSize: "35px 35px",
-      }}>
-            <FAQSPage />
+        <section
+          className="flex justify-center"
+          style={{
+            backgroundColor: "var(--d-color-semantic-secondary-800, #3D83AB)",
+            backgroundImage:
+              "linear-gradient(var(--d-color-semantic-secondary-700, #69A2BC) 1px, transparent 1px), linear-gradient(90deg, var(--d-color-semantic-secondary-700, #69A2BC) 1px, transparent 1px)",
+            backgroundSize: "35px 35px",
+          }}
+        >
+          <FAQSPage />
         </section>
       </main>
     </div>
